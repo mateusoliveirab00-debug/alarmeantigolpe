@@ -1,0 +1,309 @@
+/* ==========================================================================
+   Elo Local — Estilos do protótipo
+   Identidade visual própria, baseada em psicologia das cores:
+   - Verde-azulado (teal): confiança, estabilidade, crescimento e frescor
+     (comércio de alimentos). É a cor principal.
+   - Âmbar: energia, atenção e "preço/oferta". Usado só em ações de destaque.
+   - Fundo off-white esverdeado: descanso visual, leitura longa sem cansar.
+   - Cores de status (verde, azul, âmbar, vermelho) seguem o padrão universal
+     de semáforo para o usuário entender o estado sem ler.
+   ========================================================================== */
+
+:root {
+  /* Paleta principal */
+  --el-primary: #0f766e;
+  --el-primary-escuro: #115e59;
+  --el-primary-claro: #ccfbf1;
+  --el-acento: #f59e0b;
+  --el-acento-escuro: #b45309;
+  --el-acento-claro: #fef3c7;
+
+  /* Neutros */
+  --el-fundo: #f6f8f5;
+  --el-superficie: #ffffff;
+  --el-texto: #1f2937;
+  --el-texto-suave: #5b6472;
+  --el-borda: #e2e8e4;
+
+  /* Estados */
+  --el-sucesso: #15803d;
+  --el-info: #0369a1;
+  --el-alerta: #b45309;
+  --el-perigo: #b91c1c;
+
+  /* Ligação com as variáveis do Bootstrap */
+  --bs-body-bg: var(--el-fundo);
+  --bs-body-color: var(--el-texto);
+  --bs-body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bs-primary: var(--el-primary);
+  --bs-primary-rgb: 15, 118, 110;
+  --bs-link-color: var(--el-primary);
+  --bs-link-hover-color: var(--el-primary-escuro);
+  --bs-link-color-rgb: 15, 118, 110;
+  --bs-border-color: var(--el-borda);
+  --bs-secondary-color: var(--el-texto-suave);
+}
+
+h1, h2, h3, h4, h5, h6, .display-5, .fonte-titulo {
+  font-family: "Poppins", "Inter", system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Acessibilidade: link para pular direto ao conteúdo */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--el-primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 2000;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--el-acento);
+  outline-offset: 2px;
+}
+
+/* ---------- Botões ---------- */
+.btn-primary {
+  --bs-btn-bg: var(--el-primary);
+  --bs-btn-border-color: var(--el-primary);
+  --bs-btn-hover-bg: var(--el-primary-escuro);
+  --bs-btn-hover-border-color: var(--el-primary-escuro);
+  --bs-btn-active-bg: var(--el-primary-escuro);
+  --bs-btn-active-border-color: var(--el-primary-escuro);
+  --bs-btn-disabled-bg: var(--el-primary);
+  --bs-btn-disabled-border-color: var(--el-primary);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--el-primary);
+  --bs-btn-border-color: var(--el-primary);
+  --bs-btn-hover-bg: var(--el-primary);
+  --bs-btn-hover-border-color: var(--el-primary);
+  --bs-btn-active-bg: var(--el-primary-escuro);
+  --bs-btn-active-border-color: var(--el-primary-escuro);
+}
+/* Botão de destaque (âmbar com texto escuro para manter o contraste) */
+.btn-accent {
+  --bs-btn-color: #1f2937;
+  --bs-btn-bg: var(--el-acento);
+  --bs-btn-border-color: var(--el-acento);
+  --bs-btn-hover-color: #1f2937;
+  --bs-btn-hover-bg: #fbbf24;
+  --bs-btn-hover-border-color: #fbbf24;
+  --bs-btn-active-color: #1f2937;
+  --bs-btn-active-bg: #d97706;
+  --bs-btn-active-border-color: #d97706;
+  font-weight: 600;
+}
+
+/* ---------- Navegação ---------- */
+.navbar-el {
+  background: var(--el-superficie);
+  border-bottom: 1px solid var(--el-borda);
+}
+.navbar-el .navbar-brand {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--el-primary-escuro);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navbar-el .navbar-brand img { width: 34px; height: 34px; }
+.navbar-el .nav-link {
+  color: var(--el-texto);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+.navbar-el .nav-link:hover { background: var(--el-primary-claro); }
+.navbar-el .nav-link.active {
+  background: var(--el-primary-claro);
+  color: var(--el-primary-escuro);
+  font-weight: 600;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background:
+    radial-gradient(circle at 85% 10%, rgba(245, 158, 11, 0.28), transparent 45%),
+    linear-gradient(135deg, #0b5a54 0%, #0f766e 55%, #14908a 100%);
+  color: #fff;
+}
+.selo-hero {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+}
+.hero-estatisticas {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  backdrop-filter: blur(4px);
+}
+.hero-estatisticas .numero {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fde68a;
+  line-height: 1.1;
+}
+
+/* ---------- Cartões ---------- */
+.card-el {
+  background: var(--el-superficie);
+  border: 1px solid var(--el-borda);
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+.card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.card-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.14);
+  border-color: var(--el-primary);
+  color: inherit;
+}
+.icone-circulo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: var(--el-primary-claro);
+  color: var(--el-primary-escuro);
+  flex-shrink: 0;
+}
+.icone-circulo.acento { background: var(--el-acento-claro); color: var(--el-acento-escuro); }
+
+.indicador {
+  padding: 1rem 1.1rem;
+}
+.indicador .valor {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.indicador .rotulo { color: var(--el-texto-suave); font-size: 0.875rem; }
+
+.secao-titulo { font-weight: 700; color: var(--el-primary-escuro); }
+.fonte-dado { font-size: 0.78rem; color: var(--el-texto-suave); }
+
+/* ---------- Gráfico de barras (CSS puro) ---------- */
+.barra-linha {
+  display: grid;
+  grid-template-columns: minmax(90px, 36%) 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+.barra-trilho {
+  background: #e9efec;
+  border-radius: 999px;
+  height: 14px;
+  overflow: hidden;
+}
+.barra-preenchimento {
+  height: 100%;
+  width: 0;
+  background: var(--el-primary);
+  border-radius: 999px;
+  transition: width 0.8s ease;
+}
+.barra-preenchimento.destaque { background: var(--el-acento); }
+.barra-valor { font-weight: 700; min-width: 3.4rem; text-align: right; }
+
+/* ---------- Gráfico de linha (SVG) ---------- */
+.grafico-linha { width: 100%; height: auto; display: block; }
+.gl-grade { stroke: #e2e8e4; stroke-width: 1; }
+.gl-linha { fill: none; stroke: var(--el-primary); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.gl-area { fill: rgba(15, 118, 110, 0.12); stroke: none; }
+.gl-ponto { fill: #fff; stroke: var(--el-primary); stroke-width: 3; }
+.gl-ponto:hover { fill: var(--el-acento); }
+.gl-texto { font-size: 12px; fill: var(--el-texto-suave); font-family: "Inter", sans-serif; }
+
+/* ---------- Status ---------- */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.st-pedido { background: #e0f2fe; color: #075985; }
+.st-separacao { background: #fef3c7; color: #92400e; }
+.st-transporte { background: #ccfbf1; color: #115e59; }
+.st-entregue { background: #dcfce7; color: #166534; }
+.st-atrasado { background: #fee2e2; color: #991b1b; }
+.est-ok { background: #dcfce7; color: #166534; }
+.est-pouco { background: #fef3c7; color: #92400e; }
+.est-sem { background: #fee2e2; color: #991b1b; }
+.tipo-pequeno { background: var(--el-primary-claro); color: var(--el-primary-escuro); }
+.tipo-grande { background: #e5e7eb; color: #374151; }
+
+/* ---------- Preços ---------- */
+.preco-grande {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--el-primary-escuro);
+}
+.preco-riscado { text-decoration: line-through; color: var(--el-texto-suave); }
+.linha-destaque { background: #fffbeb !important; }
+.selo-melhor {
+  background: var(--el-acento);
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+/* ---------- Formulários e filtros ---------- */
+.btn-filtro { border-radius: 999px; }
+.btn-filtro.ativo { background: var(--el-primary); color: #fff; border-color: var(--el-primary); }
+.btn-favorito { border: 0; background: transparent; font-size: 1.3rem; color: var(--el-perigo); line-height: 1; }
+
+.progress { height: 12px; background: #e9efec; border-radius: 999px; }
+.progress-bar { background: var(--el-primary); }
+.progress-bar.meta-atingida { background: var(--el-sucesso); }
+
+.aviso-exemplo {
+  background: var(--el-acento-claro);
+  color: #78350f;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape-el {
+  background: #0b3d39;
+  color: #d1e7e4;
+  margin-top: 3rem;
+}
+.rodape-el a { color: #fde68a; }
+
+/* Telas pequenas */
+@media (max-width: 575.98px) {
+  .barra-linha { grid-template-columns: 1fr auto; }
+  .barra-linha .barra-trilho { grid-column: 1 / -1; order: 3; }
+  .hero-estatisticas .numero { font-size: 1.6rem; }
+}

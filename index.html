@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Início</title>
+  <meta name="description" content="Plataforma web para acompanhar entregas, comparar preços e organizar compras conjuntas no pequeno comércio.">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+
+  <!-- Bootstrap 5 e ícones -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN): prefixo "tw-" e sem preflight, para não conflitar com o Bootstrap -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { prefix: "tw-", corePlugins: { preflight: false } };</script>
+
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body data-raiz="" data-pagina="inicio">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div id="cabecalho"></div>
+  <noscript><div class="alert alert-warning m-3">Ative o JavaScript para usar o protótipo.</div></noscript>
+
+  <main id="conteudo">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="container py-5">
+        <div class="row align-items-center g-4 py-lg-4">
+          <div class="col-lg-7">
+            <span class="badge selo-hero mb-3"><i class="bi bi-geo-alt-fill me-1"></i>Feito para o comércio de bairro</span>
+            <h1 class="display-5 fw-bold mb-3">
+              <span data-nome-plataforma></span>: previsibilidade para quem vende, clareza para quem compra
+            </h1>
+            <p class="lead mb-4">
+              Acompanhe suas entregas, entenda a variação dos preços e una forças com outros
+              comerciantes para comprar melhor.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-accent btn-lg" href="pages/painel-pedidos.html"><i class="bi bi-shop me-2"></i>Sou comerciante</a>
+              <a class="btn btn-outline-light btn-lg" href="pages/consumidor.html"><i class="bi bi-basket2 me-2"></i>Sou consumidor</a>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="hero-estatisticas">
+              <p class="small mb-3 text-uppercase fw-semibold" style="letter-spacing:.06em">O problema em números</p>
+              <div class="tw-grid tw-grid-cols-1 tw-gap-4">
+                <div><div class="numero">15,5% do PIB</div><div class="small">é o custo logístico do Brasil (EUA: 8,8%)</div></div>
+                <div><div class="numero">+75,6%</div><div class="small">alta acumulada do café moído no varejo (2024–2025)</div></div>
+                <div><div class="numero">21,6%</div><div class="small">das microempresas fecham em até 5 anos</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MÓDULOS ================= -->
+    <section class="container py-5" aria-labelledby="tituloModulos">
+      <h2 id="tituloModulos" class="secao-titulo h3 mb-1">Quatro módulos, um objetivo</h2>
+      <p class="text-secondary mb-4">Escolha por onde começar. Todos usam dados de exemplo e funcionam direto no navegador.</p>
+
+      <div class="tw-grid tw-gap-4 sm:tw-grid-cols-2 lg:tw-grid-cols-4">
+        <a class="card-el card-link p-4" href="pages/painel-pedidos.html">
+          <span class="icone-circulo mb-3"><i class="bi bi-truck"></i></span>
+          <h3 class="h5">Pedidos e entregas</h3>
+          <p class="text-secondary small mb-0">Veja prazos e status de recebimento das mercadorias e cadastre novos pedidos.</p>
+        </a>
+        <a class="card-el card-link p-4" href="pages/precos.html">
+          <span class="icone-circulo acento mb-3"><i class="bi bi-graph-up-arrow"></i></span>
+          <h3 class="h5">Preços e histórico</h3>
+          <p class="text-secondary small mb-0">Acompanhe oscilações, compare comércios e planeje a reposição do estoque.</p>
+        </a>
+        <a class="card-el card-link p-4" href="pages/compras-conjuntas.html">
+          <span class="icone-circulo mb-3"><i class="bi bi-people"></i></span>
+          <h3 class="h5">Compras conjuntas</h3>
+          <p class="text-secondary small mb-0">Junte pedidos com outros comerciantes e consiga preço de atacado.</p>
+        </a>
+        <a class="card-el card-link p-4" href="pages/consumidor.html">
+          <span class="icone-circulo acento mb-3"><i class="bi bi-basket2"></i></span>
+          <h3 class="h5">Área do consumidor</h3>
+          <p class="text-secondary small mb-0">Compare preço e disponibilidade nos comércios do seu bairro.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= DIAGNÓSTICO ================= -->
+    <section class="container pb-4" aria-labelledby="tituloDiagnostico">
+      <h2 id="tituloDiagnostico" class="secao-titulo h3 mb-1">Por que isso importa</h2>
+      <p class="text-secondary mb-4">Dados públicos que motivaram o projeto.</p>
+
+      <div class="tw-grid tw-gap-4 lg:tw-grid-cols-3">
+        <article class="card-el p-4">
+          <h3 class="h6 mb-3">Custo logístico (% do PIB)</h3>
+          <div id="graficoLogistica"></div>
+          <p class="fonte-dado mb-0 mt-2">Fonte: ILOS, 2025/2026.</p>
+        </article>
+        <article class="card-el p-4">
+          <h3 class="h6 mb-3">Alta acumulada do café, 2024–2025</h3>
+          <div id="graficoCafe"></div>
+          <p class="fonte-dado mb-0 mt-2">Fonte: IBGE (IPCA), Abic e Procon-SP.</p>
+        </article>
+        <article class="card-el p-4">
+          <h3 class="h6 mb-3">Mortalidade em 5 anos</h3>
+          <div id="graficoMortalidade"></div>
+          <p class="fonte-dado mb-0 mt-2">Fonte: Sebrae, com dados da Receita Federal (2018–2021).</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/graficos.js"></script>
+  <script>
+    // Desenha os três gráficos do diagnóstico com os dados do plano
+    document.addEventListener("DOMContentLoaded", function () {
+      graficoBarras(document.getElementById("graficoLogistica"), DIAGNOSTICO.custoLogistico);
+      graficoBarras(document.getElementById("graficoCafe"), DIAGNOSTICO.cafe, { casas: 1 });
+      graficoBarras(document.getElementById("graficoMortalidade"), DIAGNOSTICO.mortalidade);
+    });
+  </script>
+</body>
+</html>
